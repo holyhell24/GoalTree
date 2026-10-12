@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  loadMonthGoals,
+  saveMonthGoals,
+} from "../../services/monthGoalsStorage";
 import type { GoalGroup, MonthEntry, MonthGoalsProps } from "./types";
 
 // Complete class names keep every monthly palette available to Tailwind.
@@ -32,18 +36,13 @@ const months = [
   "December",
 ];
 
-function createMonth(): MonthEntry {
-  return {
-    must: Array.from({ length: 5 }, () => ({ text: "", completed: false })),
-    want: Array.from({ length: 5 }, () => ({ text: "", completed: false })),
-  };
-}
-
 export function MonthGoals({ title = "Month Goals" }: MonthGoalsProps) {
-  const [selectedMonth, setSelectedMonth] = useState(() =>
-    new Date().getMonth(),
-  );
-  const [entries, setEntries] = useState(() => months.map(createMonth));
+  const [saved] = useState(loadMonthGoals);
+  const [selectedMonth, setSelectedMonth] = useState(saved.selectedMonth);
+  const [entries, setEntries] = useState<MonthEntry[]>(saved.entries);
+  useEffect(() => {
+    saveMonthGoals({ selectedMonth, entries });
+  }, [selectedMonth, entries]);
   const month = months[selectedMonth];
   const palette = palettes[selectedMonth];
 
