@@ -1,3 +1,4 @@
+import { MonthSelector } from "../../components/MonthSelector";
 import type { MonthGoalsProps } from "./types";
 import { months, palettes } from "./constants";
 import { useMonthGoals } from "../../hooks/useMonthGoals";
@@ -25,20 +26,11 @@ export function MonthGoals({ title = "Month Goals", userId }: MonthGoalsProps) {
         <p role={error ? "alert" : "status"}>
           {error || (saving ? "Saving..." : null)}
         </p>
-        <label>
-          <span className="sr-only">Select month</span>
-          <select
-            className="cursor-pointer rounded-lg border border-border bg-surface px-3 py-2 text-ink"
-            value={selectedMonth}
-            onChange={(event) => selectMonth(Number(event.target.value))}
-          >
-            {months.map((name, index) => (
-              <option key={name} value={index}>
-                {name}
-              </option>
-            ))}
-          </select>
-        </label>
+        <MonthSelector
+          months={months}
+          value={selectedMonth}
+          onChange={selectMonth}
+        />
       </div>
       <div className="relative overflow-hidden rounded-sm border border-[#e5dfd2] bg-[#fffdf7] px-5 py-10 text-[#48443d] scheme-light shadow-[0_8px_32px_#58452c0d] sm:px-12 sm:py-12">
         <h1
