@@ -16,6 +16,8 @@
 
 GoalTree has two tabs:
 
+The site offers selectable color themes for its background, buttons, and surrounding interface. Keep the monthly journal sheet, goal text, MUST/WANT text, and month letter palettes independent of the site theme.
+
 ### Month goal
 
 - Follow the user's journal reference: a large uppercase month heading with each letter colored from that month's seasonal palette, a centered "5 must / 5 want" legend, and two checkbox columns labeled "MUST" and "WANT" on a warm paper background.

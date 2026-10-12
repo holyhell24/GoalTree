@@ -1,7 +1,7 @@
 export const styles = {
-  toolbar: 'mb-5 flex flex-wrap items-center justify-between gap-3 text-sm text-stone-500',
-  select: 'cursor-pointer rounded-lg border border-stone-300 bg-transparent px-3 py-2 text-stone-700',
-  paper: 'relative overflow-hidden rounded-sm border border-[#e5dfd2] bg-[#fffdf7] px-5 py-10 text-[#48443d] shadow-[0_8px_32px_#58452c0d] sm:px-12 sm:py-12',
+  toolbar: 'mb-5 flex flex-wrap items-center justify-between gap-3 text-sm text-muted',
+  select: 'cursor-pointer rounded-lg border border-border bg-surface px-3 py-2 text-ink',
+  paper: 'relative overflow-hidden rounded-sm border border-[#e5dfd2] bg-[#fffdf7] px-5 py-10 text-[#48443d] scheme-light shadow-[0_8px_32px_#58452c0d] sm:px-12 sm:py-12',
   title: 'text-center font-["Segoe_Print","Bradley_Hand",cursive] text-[clamp(2rem,7vw,5rem)] leading-tight font-normal tracking-[0.03em]',
   legend: 'mt-3 flex flex-col items-center gap-1 font-["Segoe_Print","Bradley_Hand",cursive] text-xl uppercase sm:text-2xl',
   legendLine: 'flex items-center gap-3',
@@ -11,7 +11,7 @@ export const styles = {
   list: 'space-y-4',
   row: 'flex min-h-14 items-start gap-3',
   checkbox: 'mt-3 size-6 shrink-0 cursor-pointer rounded-none accent-[#806543]',
-  input: 'w-full resize-none border-b border-stone-200/60 bg-transparent px-1 py-2 font-["Segoe_Print","Bradley_Hand",cursive] text-xl leading-relaxed placeholder:text-stone-300 focus:border-stone-400',
+  input: 'field-sizing-content min-h-20 w-full min-w-0 resize-none border-b border-stone-200/60 bg-transparent px-1 py-2 font-["Segoe_Print","Bradley_Hand",cursive] text-xl leading-relaxed placeholder:text-stone-300 focus:border-stone-400',
   completed: 'text-stone-400 line-through',
   hint: 'mt-10 text-center text-xs text-stone-400',
 }
