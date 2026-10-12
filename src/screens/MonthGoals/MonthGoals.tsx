@@ -3,15 +3,28 @@ import { months, palettes } from "./constants";
 import { useMonthGoals } from "../../hooks/useMonthGoals";
 import { GoalColumn } from "../../components/GoalColumn";
 
-export function MonthGoals({ title = "Month Goals" }: MonthGoalsProps) {
-  const { selectedMonth, entries, selectMonth, updateGoal } = useMonthGoals();
+export function MonthGoals({ title = "Month Goals", userId }: MonthGoalsProps) {
+  const {
+    selectedMonth,
+    entries,
+    selectMonth,
+    updateGoal,
+    loading,
+    loaded,
+    saving,
+    error,
+  } = useMonthGoals(userId);
   const month = months[selectedMonth];
   const palette = palettes[selectedMonth];
 
+  if (loading) return <p role="status">Loading goals...</p>;
+  if (!loaded && error) return <p role="alert">{error}</p>;
   return (
     <section aria-label={title}>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3 text-sm text-muted">
-        <span>{title}</span>
+        <p role={error ? "alert" : "status"}>
+          {error || (saving ? "Saving..." : null)}
+        </p>
         <label>
           <span className="sr-only">Select month</span>
           <select

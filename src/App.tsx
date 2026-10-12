@@ -64,7 +64,11 @@ export default function App() {
                 hidden={activeTab !== tab.id}
                 className="mt-7"
               >
-                {tab.id === "month-goals" ? <MonthGoals /> : <GoalTree />}
+                {tab.id === "month-goals" ? (
+                  <MonthGoals key={user.uid} userId={user.uid} />
+                ) : (
+                  <GoalTree />
+                )}
               </div>
             ))}
           </>

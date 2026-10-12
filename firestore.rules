@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/years/{year}/goals/{goalId} {
+      function owner() {
+        return request.auth != null
+          && request.auth.uid == userId
+          && request.auth.uid in ['GvvykVTdlAMnGVr5POrA4AdPs2d2', 'wfkduwaylWOJHDhWJBo1v0DfI8j1'];
+      }
+      allow read: if owner();
+      allow create, update: if owner()
+        && goalId.matches('^(0|1|2|3|4|5|6|7|8|9|10|11)-(must|want)-[0-4]$')
+        && request.resource.data.keys().hasOnly(['text', 'completed'])
+        && request.resource.data.text is string
+        && request.resource.data.completed is bool;
+      allow delete: if owner();
+    }
+  }
+}
