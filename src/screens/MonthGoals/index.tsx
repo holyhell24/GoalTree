@@ -1,1 +1,1 @@
-export { MonthGoals } from './MonthGoals'
+export { MonthGoals } from "./MonthGoals";

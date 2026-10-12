@@ -25,7 +25,7 @@
     text-rendering: optimizeLegibility;
   }
 
-  :root[data-theme='ocean'] {
+  :root[data-theme="ocean"] {
     --site-canvas: #eef6fa;
     --site-surface: #ffffff;
     --site-ink: #203d50;
@@ -34,7 +34,7 @@
     --site-accent: #246b91;
   }
 
-  :root[data-theme='autumn'] {
+  :root[data-theme="autumn"] {
     --site-canvas: #faf2e8;
     --site-surface: #fffaf3;
     --site-ink: #513a2c;
@@ -43,7 +43,7 @@
     --site-accent: #975026;
   }
 
-  :root[data-theme='midnight'] {
+  :root[data-theme="midnight"] {
     --site-canvas: #19232f;
     --site-surface: #253342;
     --site-ink: #e7edf3;
@@ -54,7 +54,13 @@
     color-scheme: dark;
   }
 
-  body { @apply min-w-80; }
-  p { @apply leading-[1.6]; }
-  :focus-visible { @apply outline-3 outline-offset-4 outline-accent; }
+  body {
+    @apply min-w-80;
+  }
+  p {
+    @apply leading-[1.6];
+  }
+  :focus-visible {
+    @apply outline-3 outline-offset-4 outline-accent;
+  }
 }

@@ -2,14 +2,15 @@
 
 ## Structure
 
+- Format code after edits (the equivalent of the editor's Alt+Shift+F). Run `npm run format` before finishing code changes.
+
 - Store screens in `src/screens/` and reusable components in `src/components/`.
 - Give each component its own directory, using this structure:
   - `Name.tsx`: component implementation.
   - `index.tsx`: component exports.
-  - `styles.ts`: Tailwind utility class strings, imported by the implementation and applied through `className`.
   - `types.ts`: component types, imported by the implementation.
 - Store types shared by multiple components in a separate root-level `types/` directory.
-- Use Tailwind CSS for styling, with its Vite plugin and the import in `src/index.css`. Keep complete utility class names in `styles.ts` so Tailwind can detect them; avoid inline style objects.
+- Use Tailwind CSS for styling, with its Vite plugin and the import in `src/index.css`. Write utility classes directly in component `className` attributes, without `styles` objects or separate `styles.ts` files. Keep dynamic palette class names complete so Tailwind can detect them.
 - Use TypeScript/TSX for new components following these conventions. The initial scaffold uses JavaScript; migrate it when implementing the application.
 
 ## Product requirements

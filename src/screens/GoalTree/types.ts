@@ -1,1 +1,1 @@
-export type GoalTreeProps = { title?: string }
+export type GoalTreeProps = { title?: string };

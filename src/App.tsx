@@ -4,7 +4,6 @@ import type { ColorTheme } from "./components/ThemeSelector/types";
 import { Tabs } from "./components/Tabs";
 import { MonthGoals } from "./screens/MonthGoals";
 import { GoalTree } from "./screens/GoalTree";
-import { styles } from "./styles";
 
 const tabs = [
   { id: "month-goals", label: "Month" },
@@ -32,9 +31,9 @@ export default function App() {
     }
   }, [theme]);
   return (
-    <div className={styles.app}>
+    <div className="mx-auto max-w-[960px] px-6 pt-24 pb-12">
       <ThemeSelector value={theme} onChange={setTheme} />
-      <div className={styles.navigation}>
+      <div className="fixed top-3 left-3 z-50 max-w-[calc(100vw-1.5rem)] sm:top-5 sm:left-5">
         <Tabs items={tabs} activeTab={activeTab} onChange={setActiveTab} />
       </div>
       <main>
@@ -46,7 +45,7 @@ export default function App() {
             aria-labelledby={`tab-${tab.id}`}
             tabIndex={0}
             hidden={activeTab !== tab.id}
-            className={styles.panel}
+            className="mt-7"
           >
             {tab.id === "month-goals" ? <MonthGoals /> : <GoalTree />}
           </div>
