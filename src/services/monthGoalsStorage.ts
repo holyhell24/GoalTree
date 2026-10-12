@@ -1,6 +1,9 @@
-import type { MonthEntry, MonthlyGoal } from "../screens/MonthGoals/types";
+import type {
+  MonthEntry,
+  MonthlyGoal,
+  SavedMonthGoals,
+} from "../../types/goals";
 
-type SavedMonthGoals = { selectedMonth: number; entries: MonthEntry[] };
 const storageKey = "goaltree-month-goals-v1";
 
 function isGoal(value: unknown): value is MonthlyGoal {
