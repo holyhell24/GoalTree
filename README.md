@@ -1,13 +1,13 @@
 # GoalTree
 
-Use Yarn for dependencies and project scripts. Commit `yarn.lock` as the only dependency lockfile.
+Use npm for dependencies and project scripts. Commit `package-lock.json` as the only dependency lockfile.
 
 ```sh
-yarn install
-yarn dev
-yarn build
-yarn lint
-yarn format
+npm install
+npm run dev
+npm run build
+npm run lint
+npm run format
 ```
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.

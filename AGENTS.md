@@ -2,8 +2,8 @@
 
 ## Structure
 
-- Use only Yarn commands for dependencies and project scripts. Keep `yarn.lock` as the sole dependency lockfile; do not generate `package-lock.json`.
-- Format code after edits (the equivalent of the editor's Alt+Shift+F). Run `yarn format` before finishing code changes.
+- Use npm commands for dependencies and project scripts. Keep `package-lock.json` as the sole dependency lockfile; do not generate `yarn.lock`.
+- Format code after edits (the equivalent of the editor's Alt+Shift+F). Run `npm run format` before finishing code changes.
 
 - Store screens in `src/screens/` and reusable components in `src/components/`.
 - Give each component its own directory, using this structure:
