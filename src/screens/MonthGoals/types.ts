@@ -1,4 +1,1 @@
-export type MonthGoalsProps = {
-  title?: string;
-  userId: string;
-};
+export type MonthGoalsProps = { title?: string };
